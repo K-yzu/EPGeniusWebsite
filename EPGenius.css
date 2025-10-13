@@ -542,7 +542,7 @@ https://repo-server.site/
         }
 
         .mobile-menu-nav a::before {
-            content: '>';
+            content: '💡';
             position: absolute;
             left: 2rem;
             opacity: 0;
@@ -1610,6 +1610,7 @@ https://repo-server.site/
             background: linear-gradient(var(--primary-pink), var(--primary-cyan));
 
         }
+
 
 
 
