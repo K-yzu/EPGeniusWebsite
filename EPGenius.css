@@ -1126,24 +1126,24 @@ https://repo-server.site/
             letter-spacing: 1px;
         }
 
-        /* list-owners Section */
-        .list-owners {
+        /* playlist-creators Section */
+        .playlist-creators {
             padding: 120px 2rem;
         }
 
-        .list-owners-container {
+        .playlist-creators-container {
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .list-owners-grid {
+        .playlist-creators-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 3rem;
             margin-top: 5rem;
         }
 
-        .list-owners-card {
+        .playlist-creators-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             padding: 3rem;
@@ -1154,7 +1154,7 @@ https://repo-server.site/
             clip-path: polygon(30px 0%, 100% 0%, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0% 100%, 0% 30px);
         }
 
-        .list-owners-card.featured {
+        .playlist-creators-card.featured {
             border-color: var(--primary-cyan);
             background: rgba(0, 255, 255, 0.05);
             transform: scale(1.05);
@@ -1162,12 +1162,12 @@ https://repo-server.site/
         }
 
 
-        .list-owners-card:hover {
+        .playlist-creators-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(0, 255, 255, 0.2);
         }
 
-        .list-owners-card.featured:hover {
+        .playlist-creators-card.featured:hover {
             transform: scale(1.05) translateY(-10px);
         }
 
@@ -1431,11 +1431,11 @@ https://repo-server.site/
                 grid-template-columns: 1fr;
             }
             
-            .list-owners-grid {
+            .playlist-creators-grid {
                 grid-template-columns: 1fr;
             }
             
-            .list-owners-card.featured {
+            .playlist-creators-card.featured {
                 transform: none;
             }
             
@@ -1623,4 +1623,5 @@ https://repo-server.site/
             background: linear-gradient(var(--primary-pink), var(--primary-cyan));
 
         }
+
 
