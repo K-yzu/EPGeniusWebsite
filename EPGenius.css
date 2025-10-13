@@ -463,7 +463,8 @@ https://repo-server.site/
         }
 
         .mobile-menu-logo::before {
-            content: '>';
+            content: '💡';
+            animation: blink 1s infinite;
             margin-right: 0.5rem;
             color: var(--primary-orange);
             transition: all 0.3s ease;
@@ -678,7 +679,8 @@ https://repo-server.site/
         }
 
         .logo::before {
-            content: '>';
+            content: '💡';
+            animation: blink 1s infinite;
             margin-right: 0.5rem;
             color: var(--primary-orange);
             transition: all 0.3s ease;
@@ -1608,6 +1610,7 @@ https://repo-server.site/
             background: linear-gradient(var(--primary-pink), var(--primary-cyan));
 
         }
+
 
 
 
