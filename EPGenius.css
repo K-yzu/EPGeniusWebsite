@@ -1132,7 +1132,7 @@ https://repo-server.site/
         }
 
         .creators-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -1623,6 +1623,7 @@ https://repo-server.site/
             background: linear-gradient(var(--primary-pink), var(--primary-cyan));
 
         }
+
 
 
 
