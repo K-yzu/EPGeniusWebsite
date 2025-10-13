@@ -471,9 +471,9 @@ https://repo-server.site/
         }
 
         .mobile-menu-logo::after {
-            content: '_';
+            content: '.';
             animation: blink 1s infinite;
-            color: var(--primary-cyan);
+            color: var(--primary-purple);
         }
 
         .mobile-menu-logo:hover {
@@ -692,9 +692,9 @@ https://repo-server.site/
         }
 
         .logo::after {
-            content: '_';
+            content: '.';
             animation: blink 1s infinite;
-            color: var(--primary-cyan);
+            color: var(--primary-purple);
         }
 
         @keyframes blink {
@@ -1610,6 +1610,7 @@ https://repo-server.site/
             background: linear-gradient(var(--primary-pink), var(--primary-cyan));
 
         }
+
 
 
 
