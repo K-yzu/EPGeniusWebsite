@@ -393,7 +393,7 @@ https://repo-server.site/
         });
 
         // Random cyber text effects
-        const cyberTexts = ['CONNECTING...', 'PLAYLIST LINK ESTABLISHED', 'PLAYLIST ACTIVE', 'EPG LOADED'];
+        const cyberTexts = ['CONNECTING...', 'CONNECTED TO EPGENIUS', 'PLAYLIST ACTIVE', 'EPG LOADED'];
         
         setInterval(() => {
             const randomText = cyberTexts[Math.floor(Math.random() * cyberTexts.length)];
@@ -458,4 +458,5 @@ https://repo-server.site/
                     }, 3000);
                 }, 2000);
             }
+
         });
