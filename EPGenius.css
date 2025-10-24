@@ -1084,6 +1084,38 @@ https://repo-server.site/
             color: var(--text-secondary);
             line-height: 1.8;
         }
+		
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .plan-playlists {
+            list-style: none;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .plan-playlists li {
+            padding: 1rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 2rem;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .plan-playlists li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-cyan);
+            font-size: 0.8rem;
+        }
 
         /* Stats Section */
         .stats {
@@ -1173,37 +1205,6 @@ https://repo-server.site/
             transform: scale(1.05) translateY(-10px);
         }
 
-        .plan-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-cyan);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-        }
-
-        .plan-playlists {
-            list-style: none;
-            margin-bottom: 3rem;
-            text-align: left;
-        }
-
-        .plan-playlists li {
-            padding: 1rem 0;
-            color: var(--text-secondary);
-            position: relative;
-            padding-left: 2rem;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-        }
-
-        .plan-playlists li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: var(--primary-cyan);
-            font-size: 0.8rem;
-        }
 		
 /* Modal Background */
 .modal {
@@ -1416,7 +1417,7 @@ https://repo-server.site/
             box-shadow: 0 15px 40px rgba(0, 255, 255, 0.4);
 			
 		}
-
+		
         /* Footer */
         .footer {
             padding: 60px 2rem 40px;
@@ -1734,6 +1735,8 @@ https://repo-server.site/
             background: linear-gradient(var(--primary-pink), var(--primary-cyan));
 
         }
+		
+		
 
 
 
