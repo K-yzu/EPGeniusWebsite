@@ -227,13 +227,13 @@ https://repo-server.site/
                     <a class="btn-secondary" id="sharePlaylistBtn">SHARE A NEW PLAYLIST</a>
                 </div>
                 <div class="creators-card">
-                    <a href="#" class="btn-secondary">UPDATE ALREADY SHARED PLAYLIST</a>
+                    <a class="btn-secondary" id="updatePlaylistBtn">UPDATE ALREADY SHARED PLAYLIST</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal Popup -->
+    <!-- Modal Popup for Sharing a New Playlist -->
 <div id="popupModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
@@ -280,6 +280,57 @@ https://repo-server.site/
     </div>
 </div>
 
+ <!-- Modal Popup for Updating an Already Shared Playlist -->
+    <div id="updatePopupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>UPDATE ALREADY SHARED PLAYLIST</h3>
+                <p class="section-subtitle">⚠️ HEADS UP: THIS SECTION IS NOT FOR GETTING YOUR M3U FILE. IT'S MEANT FOR USERS WHO HAVE CURATED THEIR OWN PLAYLIST AND WISH TO SHARE IT WITH THE COMMUNITY.</p>
+            </div>
+          <div class="modal-body">
+    <form id="shareServiceForm">
+        <div class="form-group">
+            <label for="playlistId">Playlist ID *</label>
+            <input type="text" id="playlistId" name="playlistId" placeholder="ENTER PLAYLIST ID" required>
+        </div>
+
+        <div class="form-group">
+            <label for="listPassword">List Password *</label>
+            <input type="password" id="listPassword" name="listPassword" placeholder="ENTER LIST PASSWORD" required>
+        </div>
+
+        <div class="form-group">
+            <label for="newCountries">New Countries</label>
+            <input type="text" id="newCountries" name="newCountries" placeholder="LEAVE BLANK IF THERE ARE NO NEW COUNTRIES">
+        </div>
+
+        <div class="form-group">
+            <label for="newCategories">New Categories</label>
+            <input type="text" id="newCategories" name="newCategories" placeholder="LEAVE BLANK IF THERE ARE NO NEW CATEGORIES">
+        </div>
+
+        <div class="form-group">
+            <label for="newEpgUrl">New EPG URL</label>
+            <input type="url" id="newEpgUrl" name="newEpgUrl" placeholder="LEAVE BLANK IF THERE IS NO NEW EPG">
+        </div>
+
+        <div class="form-group">
+            <label for="newDonationLink">New Donation Link</label>
+            <input type="url" id="newDonationLink" name="newDonationLink" placeholder="LEAVE BLANK IF THERE IS NO NEW LINK">
+        </div>
+
+        <div class="form-group">
+            <label for="newM3uFile">Upload New M3U File *</label>
+            <input type="file" id="newM3uFile" name="newM3uFile" accept=".m3u" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Update Playlist</button>
+    </form>
+</div>
+
+        </div>
+    </div>
+
     <!-- Credentials Edit Section -->
     <section class="credentials fade-up" id="credentials">
         <div class="credentials-container">
@@ -288,74 +339,55 @@ https://repo-server.site/
                 <p class="section-subtitle">THIS SECTION IS NOT FOR GETTING YOUR M3U FILE. IT'S MEANT FOR USERS WHO ALREADY HAVE A GOOGLE DRIVE FILE GENERATED AND WISH TO UPDATE THE CREDENTIALS IN IT.</p>
             </div>
             
-            <div class="credentials-form-wrapper">
-                <div class="credentials-form">
-                    <div class="form-group">
-                        <label for="name">DNS or Server or URL:</label>
-                        <input type="text" id="name" name="name" placeholder="ENTER YOUR DNS OR SERVER OR URL" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="name">Username</label>
-                        <input type="text" id="name" name="name" placeholder="ENTER YOUR USERNAME" required>
-                    </div>
-					
-					 <div class="form-group">
-                        <label for="name">Password:</label>
-                        <input type="password" id="userPassword" name="password" placeholder="ENTER YOUR PASSWORD" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">GOOGLE DRIVE FILE ID</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Enter your Google Drive File ID" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary btn-submit">Submit Credentials</button>
-                </div>
-            </div>
+<div class="credentials-form-wrapper">
+    <div class="credentials-form">
+        <!-- DNS Server URL -->
+        <div class="form-group">
+            <label for="dns-server-url">DNS SERVER URL:</label>
+            <input type="text" id="dns-server-url" name="dns-server-url" placeholder="ENTER YOUR DNS OR SERVER OR URL" required>
         </div>
-    </section>
+        
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="ENTER YOUR USERNAME" required>
+        </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <span class="footer-separator">|</span>
-                <a href="#">Terms of Service</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 EPGenius. All rights reserved.</p>
-                <p class="footer-credit">Brought to you by <a href="https://repo-server.site/" target="_blank" rel="noopener nofollow">EPGenius</a></p>
-            </div>
+        <!-- Password -->
+        <div class="form-group">
+            <label for="userPassword">Password:</label>
+            <input type="password" id="userPassword" name="password" placeholder="ENTER YOUR PASSWORD" required>
         </div>
-    </footer>
+        
+        <!-- Google Drive File ID -->
+        <div class="form-group">
+            <label for="google-file-id">GOOGLE DRIVE FILE ID:</label>
+            <textarea id="google-file-id" name="google-file-id" rows="5" placeholder="ENTER YOUR GOOGLE DRIVE FILE ID" required></textarea>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="btn-primary btn-submit">Submit Credentials</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <span class="footer-separator">|</span>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EPGenius. All rights reserved.</p>
+            <p class="footer-credit">Brought to you by <a href="https://repo-server.site/" target="_blank" rel="noopener noreferrer">EPGenius</a></p>
+        </div>
+    </div>
+</footer>
 
     <script src="EPGeniusScripts.js"></script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
