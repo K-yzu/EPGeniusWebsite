@@ -405,11 +405,13 @@ document.head.appendChild(style);
 document.querySelector('.btn-submit').addEventListener('click', function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const dnsServerUrl = document.getElementById('dns-server-url').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('userPassword').value;
+    const googleFileId = document.getElementById('google-file-id').value;
 
-    if (name && email && message) {
+    // Check if all fields are filled
+    if (dnsServerUrl && username && password && googleFileId) {
         // Simulate form submission
         this.textContent = 'UPDATING...';
         this.style.background = 'linear-gradient(135deg, var(--primary-cyan), var(--primary-pink))';
@@ -419,24 +421,35 @@ document.querySelector('.btn-submit').addEventListener('click', function(e) {
             this.style.background = 'var(--primary-cyan)';
 
             // Clear form
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
+            document.getElementById('dns-server-url').value = '';
+            document.getElementById('username').value = '';
+            document.getElementById('userPassword').value = '';
+            document.getElementById('google-file-id').value = '';
 
             // Reset button after 3 seconds
             setTimeout(() => {
-                this.textContent = 'Transmit Message';
+                this.textContent = 'Submit Credentials';
                 this.style.background = '';
             }, 3000);
         }, 2000);
+    } else {
+        // Show alert if fields are missing
+        alert('Please fill out all the fields');
     }
 });
 
+
 // Modal functionality
+const updatePlaylistBtn = document.getElementById('updatePlaylistBtn');
 const sharePlaylistBtn = document.getElementById('sharePlaylistBtn');
 const popupModal = document.getElementById('popupModal');
 
-// Open the modal when the "Share a New Playlist" button is clicked
+// Show the "Update Playlist" modal
+updatePlaylistBtn.addEventListener('click', function() {
+    updatePopupModal.style.display = 'block';
+});
+
+// Show the "Share a New Playlist" button modal
 sharePlaylistBtn.addEventListener('click', function() {
     popupModal.style.display = 'block';
 });
@@ -445,5 +458,8 @@ sharePlaylistBtn.addEventListener('click', function() {
 window.addEventListener('click', function(event) {
     if (event.target === popupModal) {
         popupModal.style.display = 'none';
+    }
+	 if (event.target === updatePopupModal) {
+        updatePopupModal.style.display = 'none';
     }
 });
