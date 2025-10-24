@@ -214,7 +214,7 @@ https://repo-server.site/
         </div>
     </section>
 
-    <!-- Playlist Creators Section -->
+      <!-- Playlist Creators Section -->
     <section class="creators fade-up" id="creators">
         <div class="creators-container">
             <div class="section-header">
@@ -224,7 +224,7 @@ https://repo-server.site/
             
             <div class="creators-grid">
                 <div class="creators-card">
-                    <a href="#" class="btn-secondary">SHARE A NEW PLAYLIST</a>
+                    <a class="btn-secondary" id="sharePlaylistBtn">SHARE A NEW PLAYLIST</a>
                 </div>
                 <div class="creators-card">
                     <a href="#" class="btn-secondary">UPDATE ALREADY SHARED PLAYLIST</a>
@@ -232,6 +232,53 @@ https://repo-server.site/
             </div>
         </div>
     </section>
+
+    <!-- Modal Popup -->
+<div id="popupModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>SHARE A NEW PLAYLIST</h3>
+			<p class="section-subtitle">⚠️ HEADS UP: THIS SECTION IS NOT FOR GETTING YOUR M3U FILE. IT'S MEANT FOR USERS WHO HAVE CURATED THEIR OWN PLAYLIST AND WISH TO SHARE IT WITH THE COMMUNITY.</p>
+        </div>
+        <div class="modal-body">
+            <form id="shareServiceForm">
+                <div class="form-group">
+                    <label for="serviceName">Service Name</label>
+                    <input type="text" id="serviceName" name="serviceName" placeholder="ENTER SERVICE NAME" required>
+                </div>
+                <div class="form-group">
+                    <label for="countries">Countries</label>
+                    <input type="text" id="countries" name="countries" placeholder="ENTER COUNTRIES" required>
+                </div>
+                <div class="form-group">
+                    <label for="discordUsername">Discord Username</label>
+                    <input type="text" id="discordUsername" name="discordUsername" placeholder="ENTER DISCORD USERNAME" required>
+                </div>
+                <div class="form-group">
+                    <label for="mainCategories">Main Categories</label>
+                    <input type="text" id="mainCategories" name="mainCategories" placeholder="ENTER MAIN CATEGORIES" required>
+                </div>
+                <div class="form-group">
+                    <label for="epgUrl">EPG URL</label>
+                    <input type="url" id="epgUrl" name="epgUrl" placeholder="ENTER EPG URL" required>
+                </div>
+                <div class="form-group">
+                    <label for="donationLink">Donation Link</label>
+                    <input type="url" id="donationLink" name="donationLink" placeholder="ENTER DONATION LINK" required>
+                </div>
+                <div class="form-group">
+                    <label for="listPassword">List Password</label>
+                    <input type="password" id="listPassword" name="listPassword" placeholder="ENTER LIST PASSWORD" required>
+                </div>
+                <div class="form-group">
+                    <label for="m3uFile">Upload M3U File</label>
+                    <input type="file" id="m3uFile" name="m3uFile" accept=".m3u" required>
+                </div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 
     <!-- Credentials Edit Section -->
     <section class="credentials fade-up" id="credentials">
