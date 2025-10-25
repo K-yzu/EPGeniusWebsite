@@ -96,7 +96,7 @@ https://repo-server.site/
 	</section>		
 			
     <!-- Disclaimer Section -->
-    <section class="disclaimer fade-up" id="disclaimer">
+    <section class="disclaimer" id="disclaimer">
         <div class="disclaimer-container">
             <div class="section-header">
                   <h2 class="section-title">Disclaimer</h2>
@@ -113,7 +113,7 @@ https://repo-server.site/
 	</section>
 
     <!-- Stats Section -->
-    <section class="stats fade-up" id="stats">
+    <section class="stats" id="stats">
         <div class="stats-container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -137,7 +137,7 @@ https://repo-server.site/
     </section>
 
     <!-- Playlists Section -->
-    <section class="playlists fade-up" id="playlists">
+    <section class="playlists" id="playlists">
         <div class="playlists-container">
             <div class="section-header">
                 <h2 class="section-title">Playlists</h2>
@@ -153,7 +153,7 @@ https://repo-server.site/
                         <li>Last updated:</li>
                         <li>Downloads:</li>
                     </ul>
-					<a href="#" class="btn-secondary">Download</a>
+					<a class="btn-secondary" id="openPlaylistModal">Download</a>
                 </div>
                 
                 <div class="playlist-card">
@@ -213,9 +213,26 @@ https://repo-server.site/
             </div>
         </div>
     </section>
+	
+<!-- Playlist Modal structure -->
+<div id="playlistModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Choose an Option</h3>
+        </div>
+        <div class="modal-body">
+            <div class="button-container">
+                <button class="modal-button">Automatic</button>
+                <button class="modal-button">Manual</button>
+                <button class="modal-button">Donate ❤️</button>
+                <button class="modal-button">Preview List + EPG</button>
+            </div>
+        </div>
+    </div>
+</div>
 
       <!-- Playlist Creators Section -->
-    <section class="creators fade-up" id="creators">
+    <section class="creators" id="creators">
         <div class="creators-container">
             <div class="section-header">
                 <h2 class="section-title">Playlist Creators</h2>
@@ -232,13 +249,14 @@ https://repo-server.site/
             </div>
         </div>
     </section>
+	
 
-    <!-- Modal Popup for Sharing a New Playlist -->
+<!-- Modal Popup for Sharing a New Playlist -->
 <div id="popupModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
             <h3>SHARE A NEW PLAYLIST</h3>
-			<p class="section-subtitle">⚠️ HEADS UP: THIS SECTION IS NOT FOR GETTING YOUR M3U FILE. IT'S MEANT FOR USERS WHO HAVE CURATED THEIR OWN PLAYLIST AND WISH TO SHARE IT WITH THE COMMUNITY.</p>
+            <p class="section-subtitle">⚠️ HEADS UP: THIS SECTION IS NOT FOR GETTING YOUR M3U FILE. IT'S MEANT FOR USERS WHO HAVE CURATED THEIR OWN PLAYLIST AND WISH TO SHARE IT WITH THE COMMUNITY.</p>
         </div>
         <div class="modal-body">
             <form id="shareServiceForm">
@@ -274,11 +292,21 @@ https://repo-server.site/
                     <label for="m3uFile">Upload M3U File</label>
                     <input type="file" id="m3uFile" name="m3uFile" accept=".m3u" required>
                 </div>
+                <!-- VOD Checkbox -->
+<div class="form-group vod-checkbox-group">
+    <label for="vodCheckbox">VOD</label>
+    <label>
+        <input type="checkbox" id="vodCheckbox" name="vodCheckbox">
+        <span class="checkbox-custom"></span>
+    </label>
+</div>
+
                 <button type="submit" class="btn-submit">Submit</button>
             </form>
         </div>
     </div>
 </div>
+
 
  <!-- Modal Popup for Updating an Already Shared Playlist -->
     <div id="updatePopupModal" class="modal">
@@ -332,7 +360,7 @@ https://repo-server.site/
     </div>
 
     <!-- Credentials Edit Section -->
-    <section class="credentials fade-up" id="credentials">
+    <section class="credentials" id="credentials">
         <div class="credentials-container">
             <div class="section-header">
                 <h2 class="section-title">Credentials Edit</h2>
@@ -381,7 +409,7 @@ https://repo-server.site/
             <a href="#">Terms of Service</a>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 EPGenius. All rights reserved.</p>
+            <p>&copy; 2025 EPGenius</p>
             <p class="footer-credit">Brought to you by <a href="https://repo-server.site/" target="_blank" rel="noopener noreferrer">EPGenius</a></p>
         </div>
     </div>
