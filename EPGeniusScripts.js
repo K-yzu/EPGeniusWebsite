@@ -463,3 +463,21 @@ window.addEventListener('click', function(event) {
         updatePopupModal.style.display = 'none';
     }
 });
+
+// Get the playlist modal
+var playlistModal = document.getElementById("playlistModal");
+
+// Get the button that opens the playlist modal
+var btn = document.getElementById("openPlaylistModal");
+
+// When the user clicks the button, open the playlist modal
+btn.onclick = function() {
+    playlistModal.style.display = "block";
+}
+
+// When the user clicks anywhere outside the playlist modal, close it
+window.onclick = function(event) {
+    if (event.target == playlistModal) {
+        playlistModal.style.display = "none";
+    }
+}
