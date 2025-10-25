@@ -572,11 +572,11 @@ https://repo-server.site/
             color: var(--darker-bg);
             padding: 1rem 2rem;
             text-decoration: none;
+			border-radius: 5px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: all 0.3s ease;
-            clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
             width: 100%;
             text-align: center;
@@ -938,6 +938,7 @@ https://repo-server.site/
             color: var(--darker-bg);
             padding: 1.2rem 3rem;
             border: none;
+			border-radius: 5px;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
@@ -945,7 +946,6 @@ https://repo-server.site/
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
-            clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
         }
 
         .btn-primary:hover {
@@ -958,6 +958,7 @@ https://repo-server.site/
             color: var(--primary-cyan);
             padding: 1.2rem 3rem;
             border: 2px solid var(--primary-cyan);
+			border-radius: 5px;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
@@ -965,7 +966,6 @@ https://repo-server.site/
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
         }
 
         .btn-secondary:hover {
@@ -1116,6 +1116,88 @@ https://repo-server.site/
             color: var(--primary-cyan);
             font-size: 0.8rem;
         }
+		
+		/* Playlist Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+}
+
+/* Playlist Modal Content */
+.modal-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    max-width: 600px;
+    margin: 10% auto;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    clip-path: polygon(30px 0%, 100% 0%, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0% 100%, 0% 30px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+    max-height: 80vh; /* Limits the height to 80% of the viewport height */
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+}
+
+/* Playlist Modal Header */
+.modal-header h3 {
+    color: var(--primary-cyan);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px var(--primary-cyan);
+}
+
+/* Playlist Modal Body */
+.modal-body {
+    color: var(--text-primary);
+}
+
+/* Button styling inside modal */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-button {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+    color: var(--darker-bg);
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 22%;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.modal-button:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom Scrollbar */
+.modal-content::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--darker-bg); /* Track color */
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary-cyan), var(--primary-pink)); /* Gradient for the thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--primary-pink), var(--primary-cyan)); /* Inverted gradient on hover */
+}
 
         /* Stats Section */
         .stats {
@@ -1310,10 +1392,10 @@ https://repo-server.site/
     background: var(--primary-cyan);
     color: white;
     border: none;
+	border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    clip-path: polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px);
 }
 
 .btn-submit:hover {
@@ -1321,6 +1403,44 @@ https://repo-server.site/
     box-shadow: 0 15px 40px rgba(229, 231, 235, 0.4);
 }
 
+/* Styling for the checkbox group */
+.vod-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* Hide the default checkbox */
+.vod-checkbox-group input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox style */
+.vod-checkbox-group .checkbox-custom {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #00ffff;
+    background-color: white;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+/* When the checkbox is checked */
+.vod-checkbox-group input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: #7c3aed;
+    border-color: #7c3aed;
+    box-shadow: 0 0 10px #7c3aed; /* Optional: Adds a glow effect */
+}
+
+/* Optional: Change label font size and style */
+.vod-checkbox-group label {
+    font-size: 1rem;
+    color: #333; /* Dark text color for visibility */
+    display: flex;
+    align-items: center;
+}
 
 
         /* credentials Section */
@@ -1402,6 +1522,7 @@ https://repo-server.site/
             color: var(--darker-bg);
             padding: 1.2rem 3rem;
             border: none;
+			border-radius: 5px;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
@@ -1409,7 +1530,6 @@ https://repo-server.site/
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
-            clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
         }
 
         .btn-submit:hover {
